@@ -1,5 +1,5 @@
-import { greetingResource } from './greeting';
-import { ResourcesContainer } from './types';
+import { greetingResource } from '@/resources/greeting';
+import { ResourcesContainer } from '@/resources/types';
 
 export const resources: ResourcesContainer = {
   greeting: greetingResource

@@ -9,4 +9,9 @@ export default defineConfig({
   banner: {
     js: '#!/usr/bin/env node',
   },
+  esbuildOptions(options) {
+    options.alias = {
+      '@': './src'
+    }
+  }
 }) 

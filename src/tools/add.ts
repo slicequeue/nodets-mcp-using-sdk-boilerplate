@@ -1,6 +1,6 @@
 import { z } from "zod";
-import { ResponseUtil } from "../utils/ResponseUtil";
-import { MCPTool } from "./types";
+import { ResponseUtil } from "@/utils/ResponseUtil";
+import { MCPTool } from "@/tools/types";
 
 export const addTool: MCPTool<{
   a: z.ZodNumber;

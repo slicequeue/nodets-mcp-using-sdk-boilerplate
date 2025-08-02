@@ -1,4 +1,4 @@
-import { PackageJsonUtil } from './PackageJsonUtil';
+import { PackageJsonUtil } from '@/utils/PackageJsonUtil';
 
 // 사용 예제
 export function exampleUsage() {

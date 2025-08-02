@@ -1,4 +1,4 @@
-import { MCPResource } from "./types";
+import { MCPResource } from "@/resources/types";
 import { ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
 
 export const greetingResource: MCPResource = {
@@ -7,8 +7,8 @@ export const greetingResource: MCPResource = {
   template: new ResourceTemplate('greeting://{name}', {
     list: undefined
   }),
-  handler: async (uri: URL, params: Record<string, string>) => {
-    const name = params.name || '익명';
+  handler: async (uri: URL, params: Record<string, string | string[]>) => {
+    const name = (params.name as string) || '익명';
     
     // 현재 시간에 따른 인사말 생성
     const now = new Date();

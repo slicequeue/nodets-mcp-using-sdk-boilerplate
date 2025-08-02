@@ -1,13 +1,13 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { PackageJsonUtil } from "./utils/PackageJsonUtil";
-import { tools } from "./tools";
-import { resources } from "./resources";
+import { PackageJsonUtil } from "@/utils/PackageJsonUtil";
+import { tools } from "@/tools";
+import { resources } from "@/resources";
 
-export { PackageJsonUtil } from "./utils/PackageJsonUtil";
-export type { PackageJson } from "./utils/PackageJsonUtil";
-export { ResponseUtil } from "./utils/ResponseUtil";
-export type { MCPResponse } from "./utils/ResponseUtil";
+export { PackageJsonUtil } from "@/utils/PackageJsonUtil";
+export type { PackageJson } from "@/utils/PackageJsonUtil";
+export { ResponseUtil } from "@/utils/ResponseUtil";
+export type { MCPResponse } from "@/utils/ResponseUtil";
 
 // MCP 서버 생성
 const server = new McpServer({

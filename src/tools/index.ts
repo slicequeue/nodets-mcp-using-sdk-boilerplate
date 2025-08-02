@@ -1,6 +1,6 @@
-import { addTool } from './add';
-import { multiplyTool } from './multiply';
-import { ToolsContainer } from './types';
+import { addTool } from '@/tools/add';
+import { multiplyTool } from '@/tools/multiply';
+import { ToolsContainer } from '@/tools/types';
 
 export const tools: ToolsContainer = {
   add: addTool,
