@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { ResponseUtil } from "../utils/ResponseUtil";
 
 export const addTool = {
   name: 'add',
@@ -12,23 +13,17 @@ export const addTool = {
 
     // 유효성 검사
     if (!(a || b)) {
-      return {
-        content: [{ 
-          type: 'text' as const, 
-          text: `연산하기 위한 인자가 충분하지 않습니다. a: ${a}, b: ${b}` 
-        }]
-      };
+      return ResponseUtil.error('연산하기 위한 인자가 충분하지 않습니다.');
     }
 
     // 처리
     const result = a + b;
 
     // 반환
-    return {
-      content: [{ 
-        type: 'text' as const, 
-        text: `결과: ${result}` 
-      }]
-    };
+    return ResponseUtil.data('덧셈 결과', {
+      '첫 번째 숫자': a,
+      '두 번째 숫자': b,
+      '결과': result
+    });
   }
 };
