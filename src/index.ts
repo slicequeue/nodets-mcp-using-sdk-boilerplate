@@ -2,6 +2,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { PackageJsonUtil } from "./utils/PackageJsonUtil";
 import { tools } from "./tools";
+import { resources } from "./resources";
 
 export { PackageJsonUtil } from "./utils/PackageJsonUtil";
 export type { PackageJson } from "./utils/PackageJsonUtil";
@@ -25,6 +26,19 @@ Object.values(tools).forEach(tool => {
       inputSchema: tool.inputSchema
     },
     tool.handler
+  );
+});
+
+// 리소스 등록
+Object.values(resources).forEach(resource => {
+  return server.registerResource(
+    resource.name,
+    resource.template,
+    {
+      title: resource.name,
+      description: resource.description
+    },
+    resource.handler
   );
 });
 
