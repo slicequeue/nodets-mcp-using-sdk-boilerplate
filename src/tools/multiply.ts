@@ -2,12 +2,12 @@ import { z } from "zod";
 import { ResponseUtil } from "../utils/ResponseUtil";
 import { MCPTool } from "./types";
 
-export const addTool: MCPTool<{
+export const multiplyTool: MCPTool<{
   a: z.ZodNumber;
   b: z.ZodNumber;
 }> = {
-  name: 'add',
-  description: '두 수를 더합니다',
+  name: 'multiply',
+  description: '두 수를 곱합니다',
   inputSchema: {
     a: z.number().describe('첫 번째 숫자'),
     b: z.number().describe('두 번째 숫자')
@@ -21,13 +21,13 @@ export const addTool: MCPTool<{
     }
 
     // 처리
-    const result = a + b;
+    const result = a * b;
 
     // 반환
-    return ResponseUtil.data('덧셈 결과', {
+    return ResponseUtil.data('곱셈 결과', {
       '첫 번째 숫자': a,
       '두 번째 숫자': b,
       '결과': result
     });
   }
-};
+}; 
